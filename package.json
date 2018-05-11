@@ -1,0 +1,22 @@
+{
+  "name": "pagechecker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/balazsczap/pageChecker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/balazsczap/pageChecker/issues"
+  },
+  "homepage": "https://github.com/balazsczap/pageChecker#readme",
+  "dependencies": {
+    "puppeteer": "^1.4.0"
+  }
+}
