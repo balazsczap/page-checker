@@ -18,7 +18,13 @@
   },
   "homepage": "https://github.com/balazsczap/pageChecker#readme",
   "dependencies": {
+    "aws-sdk": "^2.238.1",
+    "body-parser": "^1.18.2",
+    "debug": "^3.1.0",
     "diff": "^3.5.0",
+    "express": "^4.16.3",
+    "node-fetch": "^2.1.2",
+    "nodemailer": "^4.6.4",
     "puppeteer": "^1.4.0"
   }
 }
