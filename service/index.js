@@ -32,7 +32,6 @@ async function compareAndStore(email, url) {
       info(`${url} page changed, notifying ${email}`);
       await PageStore.add(url, content);
       await notifyChange(diff, email);
-      process.exit();
     }
   }
 }
