@@ -1,0 +1,22 @@
+{
+  "extends": "airbnb-base",
+  "plugins": ["eslint-plugin-import", "mocha"],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js"],
+        "moduleDirectory": [
+          ".",
+          "node_modules"
+        ]
+      }
+    }
+  },
+  "env": {
+    "mocha": true
+  },
+  "rules": {
+    "no-underscore-dangle": 0,
+    "mocha/no-exclusive-tests": "error"
+  }
+}
