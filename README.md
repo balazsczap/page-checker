@@ -1,6 +1,8 @@
 # Page Checker
 
-This is a tool for
+This is a tool for getting notified when a certain webpage changes.
+
+It can be either used as a webserver, allowing people to subscribe to changes, or as a CLI tool, listening for one webpage and notifying one email address.
 
 # CLI
 
