@@ -1,15 +1,10 @@
 const { diffWords } = require('diff');
 const PageStore = require('./PageStore');
-const fetch = require('node-fetch');
 const info = require('debug')('page-checker:info');
 const error = require('debug')('page-checker:error');
 const { notifyChange } = require('./email');
 const { interval } = require('../config');
-
-async function getContents(url) {
-  const response = await fetch(url);
-  return response.text();
-}
+const { getContents } = require('./content');
 
 function compareWithStored(content, storedContent) {
   const diff = diffWords(content, storedContent);
@@ -21,8 +16,8 @@ function compareWithStored(content, storedContent) {
   return changeDiff;
 }
 
-async function compareAndStore(email, url) {
-  const content = await getContents(url);
+async function compareAndStore(email, url, selector) {
+  const content = await getContents(url, selector);
   const storedContent = await PageStore.find(url);
   if (!storedContent) {
     await PageStore.add(url, content);
@@ -36,9 +31,9 @@ async function compareAndStore(email, url) {
   }
 }
 
-async function pageCheck(email, url) {
+async function pageCheck(email, url, selector) {
   try {
-    await compareAndStore(email, url);
+    await compareAndStore(email, url, selector);
   } catch (err) {
     error(err);
   }
@@ -46,8 +41,8 @@ async function pageCheck(email, url) {
 
 let subscriptions = [];
 
-function subscribeToUrl(email, url) {
-  const task = () => pageCheck(email, url);
+function subscribeToUrl(email, url, selector) {
+  const task = () => pageCheck(email, url, selector);
   task();
   const intervalHandle = setInterval(task, interval);
   subscriptions.push({
