@@ -1,0 +1,5 @@
+{
+  "url": "https://www.facebook.com",
+  "subscriber": "hello@world.com",
+  "selector": "#content > div > div > div > div > div._7d._6_._76 > h2"
+}
