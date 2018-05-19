@@ -21,8 +21,13 @@ program
   .option('-u, --url <url>', 'Target url when using in CLI mode')
   .parse(process.argv);
 
+function readParamFile(paramFile) {
+  const fileContent = fs.readFileSync(paramFile);
+  return JSON.parse(fileContent);
+}
+
 const { url, port, subscriber, selector } = (program.paramFile ?
-  fs.readFileSync(program.paramFile) : program);
+  readParamFile(program.paramFile) : program);
 
 module.exports = {
   interval: program.interval,
