@@ -8,18 +8,18 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "aws-sdk": "^2.238.1",
+    "aws-sdk": "2.238.1",
     "body-parser": "~1.15.2",
-    "commander": "^2.15.1",
+    "commander": "2.15.1",
     "cookie-parser": "~1.4.3",
-    "cross-env": "^5.1.5",
+    "cross-env": "5.1.5",
     "debug": "~2.2.0",
-    "diff": "^3.5.0",
+    "diff": "3.5.0",
     "express": "~4.14.0",
     "morgan": "~1.7.0",
-    "node-fetch": "^2.1.2",
-    "nodemailer": "^4.6.4",
-    "puppeteer": "^1.4.0",
+    "node-fetch": "2.1.2",
+    "nodemailer": "4.6.4",
+    "puppeteer": "1.4.0",
     "serve-favicon": "2.5.0"
   },
   "devDependencies": {
@@ -27,6 +27,6 @@
     "eslint-config-airbnb-base": "11.3.1",
     "eslint-import-resolver-node": "0.3.1",
     "eslint-plugin-import": "2.7.0",
-    "eslint-plugin-mocha": "^4.11.0"
+    "eslint-plugin-mocha": "4.11.0"
   }
 }
